@@ -1,5 +1,4 @@
 
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,18 +18,21 @@ class MyApp extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('Hello World!'),
+                // Etape 2 : Deux textes
+                const Text('Hello World!'),
+                const Text(
+                  'Bienvenue dans mon application Flutter',
+                ),
 
-                Text('Bienvenue dans mon application Flutter'),
-
+                // Etape 3 : Container stylise
                 Container(
-                  margin: EdgeInsets.all(20),
-                  padding: EdgeInsets.all(16),
+                  margin: const EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
                     color: Colors.purple,
                     borderRadius: BorderRadius.circular(20),
                   ),
-                  child: Text(
+                  child: const Text(
                     'Boîte stylisée avec Container',
                     style: TextStyle(
                       color: Colors.white,
@@ -39,10 +41,13 @@ class MyApp extends StatelessWidget {
                   ),
                 ),
 
-                Text('Mon premier Container Flutter'),
+                const Text(
+                  'Mon premier Container Flutter',
+                ),
 
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
 
+                // Etape 4 : Stack avec superposition
                 Stack(
                   alignment: Alignment.topRight,
                   children: [
@@ -51,17 +56,49 @@ class MyApp extends StatelessWidget {
                       height: 200,
                       color: Colors.blue[100],
                     ),
-                    Icon(
+                    const Icon(
                       Icons.star,
                       size: 100,
                       color: Colors.amber,
                     ),
-                    Text(
+                    const Text(
                       'Superposé !',
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
+                    ),
+                  ],
+                ),
+
+                const SizedBox(height: 20),
+
+                // Etape 5 : Row avec quatre icones
+                Row(
+                  mainAxisAlignment:
+                      MainAxisAlignment.spaceAround,
+                  crossAxisAlignment:
+                      CrossAxisAlignment.center,
+                  children: const [
+                    Icon(
+                      Icons.home,
+                      color: Colors.blue,
+                      size: 40,
+                    ),
+                    Icon(
+                      Icons.star,
+                      color: Colors.amber,
+                      size: 40,
+                    ),
+                    Icon(
+                      Icons.settings,
+                      color: Colors.grey,
+                      size: 40,
+                    ),
+                    Icon(
+                      Icons.favorite,
+                      color: Colors.red,
+                      size: 40,
                     ),
                   ],
                 ),
@@ -73,5 +110,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+
 
 
