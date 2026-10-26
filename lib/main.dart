@@ -18,21 +18,18 @@ class MyApp extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // Etape 2 : Deux textes
-                const Text('Hello World!'),
-                const Text(
-                  'Bienvenue dans mon application Flutter',
-                ),
+                Text('Hello World!'),
 
-                // Etape 3 : Container stylise
+                Text('Bienvenue dans mon application Flutter'),
+
                 Container(
-                  margin: const EdgeInsets.all(20),
-                  padding: const EdgeInsets.all(16),
+                  margin: EdgeInsets.all(20),
+                  padding: EdgeInsets.all(16),
                   decoration: BoxDecoration(
                     color: Colors.purple,
                     borderRadius: BorderRadius.circular(20),
                   ),
-                  child: const Text(
+                  child: Text(
                     'Boîte stylisée avec Container',
                     style: TextStyle(
                       color: Colors.white,
@@ -41,13 +38,8 @@ class MyApp extends StatelessWidget {
                   ),
                 ),
 
-                const Text(
-                  'Mon premier Container Flutter',
-                ),
+                Text('Mon premier Container Flutter'),
 
-                const SizedBox(height: 20),
-
-                // Etape 4 : Stack avec superposition
                 Stack(
                   alignment: Alignment.topRight,
                   children: [
@@ -56,12 +48,12 @@ class MyApp extends StatelessWidget {
                       height: 200,
                       color: Colors.blue[100],
                     ),
-                    const Icon(
+                    Icon(
                       Icons.star,
                       size: 100,
                       color: Colors.amber,
                     ),
-                    const Text(
+                    Text(
                       'Superposé !',
                       style: TextStyle(
                         fontSize: 20,
@@ -71,33 +63,41 @@ class MyApp extends StatelessWidget {
                   ],
                 ),
 
-                const SizedBox(height: 20),
+                SizedBox(height: 20),
 
-                // Etape 5 : Row avec quatre icones
                 Row(
-                  mainAxisAlignment:
-                      MainAxisAlignment.spaceAround,
-                  crossAxisAlignment:
-                      CrossAxisAlignment.center,
-                  children: const [
-                    Icon(
-                      Icons.home,
-                      color: Colors.blue,
-                      size: 40,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Icon(Icons.home, color: Colors.blue, size: 40),
+                    Icon(Icons.star, color: Colors.amber, size: 40),
+                    Icon(Icons.settings, color: Colors.grey, size: 40),
+                    Icon(Icons.favorite, color: Colors.red, size: 40),
+                  ],
+                ),
+
+                SizedBox(height: 30),
+
+                // Etape 6 : Deuxieme colonne
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Titre principal',
+                      style: TextStyle(
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    Text(
+                      'Sous-titre ou description',
+                      style: TextStyle(fontSize: 18),
                     ),
                     Icon(
-                      Icons.star,
-                      color: Colors.amber,
-                      size: 40,
-                    ),
-                    Icon(
-                      Icons.settings,
-                      color: Colors.grey,
-                      size: 40,
-                    ),
-                    Icon(
-                      Icons.favorite,
-                      color: Colors.red,
+                      Icons.thumb_up,
+                      color: Colors.green,
                       size: 40,
                     ),
                   ],
@@ -110,7 +110,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-
-
-
